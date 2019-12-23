@@ -1,0 +1,17 @@
+
+public class DataProviderConcept {
+		WebDriver driver;
+		@Test(dataProvider="datas")
+		public void test(int a,String b)
+		{
+			System.setProperty("webdriver.chrome.driver",
+					"C:\\Users\\kirub\\eclipse-workspace\\TestNG\\Driver\\chromedriver.exe");
+			driver = new ChromeDriver();
+			
+			driver.get("https://www.facebook.com/");
+			
+			WebElement uname = driver.findElement(By.id("email"));
+			uname.sendKeys(String.valueOf(a));
+			
+			WebElement upass = driver.findElement(By.id("pass"));
+			upass.sendKeys(b);
