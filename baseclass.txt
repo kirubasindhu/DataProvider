@@ -1,0 +1,34 @@
+package org.selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+Base Class
+
+public class BaseClass extends BaseClassRepositary{
+	public static void main(String[] args) throws InterruptedException {
+		
+		//	FaceConcept few=new FaceConcept();
+			
+			getDriver();
+			
+			loadUrl("https://www.facebook.com/");
+					
+			WebElement uname=driver.findElement(By.id("email"));
+			type(uname, "kiruba");
+			
+			WebElement upass=driver.findElement(By.id("pass"));
+			type(upass, "passwoed");
+		
+			sle();
+			WebElement btn=driver.findElement(By.xpath("//input[@type='submit']"));
+			btnClick(btn);
+			
+			System.out.println();
+			
+			
+			quitBrowser();
+			
+				}
